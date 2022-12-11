@@ -1,4 +1,3 @@
-import { Component } from "react";
 import { ContactForm } from "./NewContact.styled"
 
 export const NewContactForm = ({submitHandling}) =>{
