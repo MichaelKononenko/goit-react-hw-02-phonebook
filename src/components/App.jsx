@@ -1,8 +1,7 @@
+import { Component } from "react";
 import { ContactList, Filter } from "./contacts/Contacts";
 import { GlobalStyle } from "./GlobalStyle.styled";
 import { NewContactForm } from "./new-contact/NewContact";
-
-const { Component } = require("react");
 
 export class App extends Component{
     state = {
