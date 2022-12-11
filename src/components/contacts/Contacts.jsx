@@ -1,6 +1,7 @@
 import { ContactItem, DeleteButton, FilterForm } from "./Contacts.styled"
+import PropTypes from 'prop-types';
 
-export const Filter = ({contacts, setFilter}) => {
+export const Filter = ({ setFilter}) => {
 return (
     <FilterForm>
         <label style={{display:"flex", flexDirection: "column"}}>
@@ -29,4 +30,14 @@ export const ContactList = ({contacts, filter, deleteContact}) => {
                 </ContactItem>
         })}
         </ul>
+}
+
+Filter.propTypes = {
+    setFilter: PropTypes.func.isRequired,
+}
+
+ContactList.propTypes = {
+    contacts: PropTypes.array.isRequired,
+    filter: PropTypes.string,
+    deleteContact: PropTypes.func.isRequired,
 }

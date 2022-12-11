@@ -1,4 +1,5 @@
 import { ContactForm } from "./NewContact.styled"
+import PropTypes from 'prop-types';
 
 export const NewContactForm = ({submitHandling}) =>{
     return(
@@ -28,4 +29,9 @@ export const NewContactForm = ({submitHandling}) =>{
         </ContactForm>
         </>
     )
+}
+
+
+NewContactForm.propTypes = {
+    submitHandling: PropTypes.func.isRequired,
 }

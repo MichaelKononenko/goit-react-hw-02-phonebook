@@ -24,7 +24,7 @@ export class App extends Component{
             <NewContactForm submitHandling = {this.submitHandling} />
 
             <h2 style={{marginBottom: "10px"}}>Contacts</h2>
-            <Filter contacts={this.state.contacts} setFilter={this.setFilter}/>
+            <Filter setFilter={this.setFilter}/>
             <ContactList contacts={this.state.contacts} filter={this.state.filter} deleteContact={this.deleteContact}/>
           </div>
         </div>
@@ -37,7 +37,6 @@ export class App extends Component{
       const form = event.currentTarget;
       const name = form.elements.name.value;
       const number = form.elements.number.value;
-      console.log('name:', name, 'number:', number);
       this.setState({
         ...this.state,
         contacts: [
@@ -45,7 +44,6 @@ export class App extends Component{
           { id: 'id-'+id, name: name, number: number },
         ],
       });
-      console.log(this.state.contacts);
    }
    setFilter = event =>{
     const inpuText = event.currentTarget.value;
@@ -53,7 +51,6 @@ export class App extends Component{
    }
    deleteContact = event =>{
     const targetId = event.currentTarget.id;
-    console.log(targetId);
     this.setState(prevState => ({contacts: prevState.contacts.filter(item => item.id !== targetId)}))
    }
 };
